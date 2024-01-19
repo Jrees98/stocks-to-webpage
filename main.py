@@ -17,17 +17,10 @@ def get_data(ticker):
     response = requests.get(STOCK_ENDPOINT, params=stock_params)
     print(response.json())
 
-get_data("TSLA")
 
-def get_data_tesla():
-    url = 'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=TSLA&apikey=' + alphavantage_key
-    r = requests.get(url)
-    data = r.json()
 
-    symbol = data['Global Quote']['01. symbol']
-    price = data['Global Quote']['05. price']
 
-    # Print the extracted values
-    print(f"Symbol: {symbol}")
-    print(f"Price: {price}")
-
+if __name__ == "__main__":
+    get_data("TSLA")
+    get_data("SNAP")
+    get_data("META")
