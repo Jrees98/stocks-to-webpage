@@ -1,0 +1,9 @@
+What I want to accomplish in this project:
+
+Get practice with Flask and React as well as pulling data from alpha vantage.
+
+1. Get the base function to pull data on the searched stock ticker.
+2. Setup a flask framework
+3. Get a react front end working.
+4. Hook up Flask and React together. 
+5. Have a basic web page where a user can search for a ticker, then the results will display on the web page. 
