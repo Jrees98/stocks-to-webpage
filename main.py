@@ -3,8 +3,21 @@ import configparser
 
 config = configparser.ConfigParser()
 config.read('config.ini')
-
 alphavantage_key = config['API_KEYS']['alphavantage_key']
+
+STOCK_ENDPOINT = "https://www.alphavantage.co/query?"
+
+def get_data(ticker):
+    stock_ticker = ticker
+    stock_params = {
+        "function": "GLOBAL_QUOTE",
+        "symbol": stock_ticker,
+        "apikey": alphavantage_key
+    }
+    response = requests.get(STOCK_ENDPOINT, params=stock_params)
+    print(response.json())
+
+get_data("TSLA")
 
 def get_data_tesla():
     url = 'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=TSLA&apikey=' + alphavantage_key
@@ -18,4 +31,3 @@ def get_data_tesla():
     print(f"Symbol: {symbol}")
     print(f"Price: {price}")
 
-get_data_tesla()
