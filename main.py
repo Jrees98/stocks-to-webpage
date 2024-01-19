@@ -5,10 +5,9 @@ config = configparser.ConfigParser()
 config.read('config.ini')
 
 alphavantage_key = config['API_KEYS']['alphavantage_key']
-print(alphavantage_key)
 
 def get_data_tesla():
-    url = 'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=TSLA&apikey='
+    url = 'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=TSLA&apikey=' + alphavantage_key
     r = requests.get(url)
     data = r.json()
 
@@ -18,3 +17,5 @@ def get_data_tesla():
     # Print the extracted values
     print(f"Symbol: {symbol}")
     print(f"Price: {price}")
+
+get_data_tesla()
