@@ -24,3 +24,5 @@ if __name__ == "__main__":
     get_data("TSLA")
     get_data("SNAP")
     get_data("META")
+
+    
