@@ -5,9 +5,10 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return 'Hello, Flask!'
+    result = main.get_data("TSLA")
+    return result
 
-main.get_data("TSLA")
+
 
 if __name__ == '__main__':
     app.run(debug=True)
