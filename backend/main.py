@@ -16,8 +16,17 @@ def get_data(ticker):
     }
     response = requests.get(STOCK_ENDPOINT, params=stock_params)
     json_data = response.json()
-    formated_response = json_data['Global Quote']['01. symbol']
-    print(formated_response)
+    symbol = json_data['Global Quote']['01. symbol']
+    open_price = json_data['Global Quote']['02. open']
+    highest_price = json_data['Global Quote']['03. high']
+    lowest_price = json_data['Global Quote']['04. low']
+    close_price = json_data['Global Quote']['05. price']
+
+    print(symbol)
+    print(open_price)
+    print(highest_price)
+    print(lowest_price)
+    print(close_price)
     return response.json()
 
 
