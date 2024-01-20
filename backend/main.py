@@ -15,7 +15,9 @@ def get_data(ticker):
         "apikey": alphavantage_key
     }
     response = requests.get(STOCK_ENDPOINT, params=stock_params)
-    print(response.json())
+    json_data = response.json()
+    formated_response = json_data['Global Quote']['01. symbol']
+    print(formated_response)
     return response.json()
 
 
