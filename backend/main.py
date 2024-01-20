@@ -16,6 +16,7 @@ def get_data(ticker):
     }
     response = requests.get(STOCK_ENDPOINT, params=stock_params)
     print(response.json())
+    return response.json()
 
 
 
